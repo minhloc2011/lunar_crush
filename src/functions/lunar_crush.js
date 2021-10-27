@@ -29,7 +29,8 @@ exports.handler = async () => {
       timeout: 0
     })
 
-    await page.waitForTimeout(30000);
+    const timeout = process.env.TIMEOUT
+    await page.waitForTimeout(timeout);
 
     statusCode = 200;
   } catch (err) {
